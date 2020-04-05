@@ -37,7 +37,7 @@ bot.error_embed = types.MethodType(error_embed, bot)
 
 async def load_extension(name, channel=None):
     try:
-        bot.load_extension(name)
+        bot.load_extension("extensions.{}".format(name))
     except (ExtensionNotFound, ExtensionAlreadyLoaded, NoEntryPointError, ExtensionFailed) as exc:
         response = "Failed to load extension: {} ({})".format(name, repr(exc))
     else:
@@ -48,7 +48,7 @@ async def load_extension(name, channel=None):
             await channel.send(response)
 async def unload_extension(name, channel=None):
     try:
-        bot.unload_extension(name)
+        bot.unload_extension("extensions.{}".format(name))
     except ExtensionNotLoaded:
         response = "Extension was not loaded: {}".format(name)
     else:
