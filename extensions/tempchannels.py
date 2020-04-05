@@ -1,6 +1,8 @@
 from discord import Embed
 from discord.ext import commands
 
+config_file = 'extensions/tempchannels_category_id.txt'
+
 class Tempchannels(commands.Cog):
     """Allows users to create temporary channels."""
     def __init__(self, bot, category_id):
@@ -37,17 +39,17 @@ class Tempchannels(commands.Cog):
     async def setup(self, ctx):
         """Setup the Temporary Channels category."""
         self.category = await ctx.guild.create_category(self.category_name)
-        with open('tempchannels_category_id.txt', 'w') as file:
+        with open(config_file, 'w') as file:
             file.write(str(self.category.id))
         await ctx.channel.send(embed=ctx.bot.confirm_embed("Temporary Channels Category is set up."))
 
 def setup(bot):
     category_id = None
     try:
-        with open('tempchannels_category_id.txt', 'r') as file:
+        with open(config_file, 'r') as file:
             category_id = int(file.read())
     except Exception as exc:
-        print("Failed to load tempchannels_category_id.txt")
+        print("Failed to load config file")
         print(repr(exc))
     bot.add_cog(Tempchannels(bot, category_id))
 def teardown(bot):

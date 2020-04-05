@@ -1,6 +1,8 @@
 from discord import Embed, ChannelType
 from discord.ext import commands
 
+config_file = 'extensions/inquisition_channel_id.txt'
+
 class Inquisition(commands.Cog):
     """Runs the Inquisition channel."""
     def __init__(self, bot, channel_id):
@@ -40,7 +42,7 @@ class Inquisition(commands.Cog):
             await ctx.channel.send(embed=ctx.bot.error_embed("Not available here."))
             return
         self.channel = ctx.channel
-        with open('inquisition_channel_id.txt', 'w') as file:
+        with open(config_file, 'w') as file:
             file.write(str(self.channel.id))
         await ctx.channel.send(embed=Embed(
                 title="Inquisition",
@@ -50,7 +52,7 @@ class Inquisition(commands.Cog):
 def setup(bot):
     channel_id = None
     try:
-        with open('inquisition_channel_id.txt', 'r') as file:
+        with open(config_file, 'r') as file:
             channel_id = int(file.read())
     except Exception as exc:
         print("Failed to load inquisition_channel_id.txt")

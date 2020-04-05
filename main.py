@@ -46,6 +46,7 @@ async def load_extension(name, channel=None):
         print(response)
         if channel is not None:
             await channel.send(response)
+
 async def unload_extension(name, channel=None):
     try:
         bot.unload_extension("extensions.{}".format(name))
@@ -97,7 +98,7 @@ async def unload(ctx, name):
 @bot.command(hidden=True)
 @commands.is_owner()
 async def end(ctx):
-    for name in bot.extensions.keys():
+    for name in list(bot.cogs):
         await unload_extension(name, channel=ctx.channel)
     await bot.close()
 
