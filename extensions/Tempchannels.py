@@ -1,5 +1,6 @@
+from datetime import datetime, timedelta
 from discord import Embed
-from discord.ext import commands
+from discord.ext import tasks, commands
 
 config_file = 'extensions/tempchannels_category_id.txt'
 
@@ -9,6 +10,19 @@ class Tempchannels(commands.Cog):
         self.bot = bot
         self.category = bot.get_channel(category_id)
         self.category_name = "\U000023F2 Temporary Channels"
+
+        self.lifespan = timedelta(hours=48)
+
+        self.cleanup_channels.start()
+
+    @tasks.loop(minutes=1.0)
+    async def cleanup_channels(self):
+        if self.category is not None:
+            for channel in self.category.channels:
+                last_message = await channel.fetch_message(channel.last_message_id)
+                age = datetime.utcnow()-last_message.created_at
+                if age >= self.lifespan:
+                    await channel.delete()
 
     @commands.group(aliases=["tempchan", "tc"])
     @commands.guild_only()
