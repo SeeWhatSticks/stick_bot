@@ -2,7 +2,7 @@ from datetime import datetime, timedelta
 from discord import Embed
 from discord.ext import tasks, commands
 
-config_file = 'extensions/tempchannels_category_id.txt'
+config_file = "extensions/tempchannels_category_id.txt"
 
 class Tempchannels(commands.Cog):
     """Allows users to create temporary channels."""
