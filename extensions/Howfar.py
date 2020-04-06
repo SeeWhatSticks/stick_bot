@@ -15,7 +15,7 @@ class Howfar(commands.Cog):
         self.key = key
         try:
             with open(data_file, 'r') as file:
-                data = json.loads(file)
+                data = json.loads(file.read)
         except Exception as exc:
             print("Failed to load data file")
             print(repr(Exception))
@@ -57,23 +57,27 @@ class Howfar(commands.Cog):
         user_data = {
             'loc': result['candidates'][0]['formatted_address'],
             'lat': result['candidates'][0]['geometry']['location']['lat'],
-            'lng': result['candidates'][0]['geometry']['location']['lat']
+            'lng': result['candidates'][0]['geometry']['location']['lng']
         }
         await ctx.channel.send(embed=Embed(
                 title="Location found",
-                description="Your co-ordinates are {}° N, {}° E".format(user_data['lat'], user_data['lng']),
+                description="Your co-ordinates are {}° N, {}° E".format(
+                        round(user_data['lat'], 4),
+                        round(user_data['lng'], 4)),
                 color=ctx.bot.colors['default']))
         self.data[str(ctx.author.id)] = user_data
-        with open(data_file, 'w', indent=2) as file:
-            json.dumps(file)
+        with open(data_file, 'w') as file:
+            json.dump(self.data, file, indent=2)
 
     @howfar.command()
     async def to(self, ctx, target: Member):
         """Find out how far you are from someone."""
         if str(ctx.author.id) not in self.data:
+            await ctx.channel.send(embed=ctx.bot.error_embed("Sorry, I don't know where you are!"))
             return
         user_info = self.data[str(ctx.author.id)]
         if str(target.id) not in self.data:
+            await ctx.channel.send(embed=ctx.bot.error_embed("Sorry, I don't know where they are!"))
             return
         target_info = self.data[str(target.id)]
         lat1 = radians(user_info['lat'])
@@ -87,28 +91,32 @@ class Howfar(commands.Cog):
         e = Embed(
                 title="Distance calculated",
                 description="It's {} miles from {} to {}".format(
-                        distance,
+                        round(distance, 0),
                         user_info['loc'],
                         target_info['loc']),
                 color=ctx.bot.colors['default'])
         e.add_field(
                 name=ctx.author.display_name,
-                value="{}° N, {}° E".format(user_info['lat'], user_info['lng']),
+                value="{}° N, {}° E".format(
+                        round(user_info['lat'], 4),
+                        round(user_info['lng'], 4)),
                 inline=True)
         e.add_field(
-            name=target.display_name,
-            value="{}° N, {}° E".format(target_info['lat'], target_info['lng']),
-            inline=True)
-        await ctx.channel.send(embed=Embed)
+                name=target.display_name,
+                value="{}° N, {}° E".format(
+                        round(target_info['lat'], 4),
+                        round(target_info['lng'], 4)),
+                inline=True)
+        await ctx.channel.send(embed=e)
 
 def setup(bot):
     try:
         with open(key_file, 'r') as file:
-            key = int(file.read())
+            key = file.read()
     except Exception as exc:
         print("Failed to load key file")
         print(repr(exc))
-        raise ExtensionFailed("Failed to load key file")
+        raise exc
     else:
         bot.add_cog(Howfar(bot, key))
 def teardown(bot):
