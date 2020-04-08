@@ -20,6 +20,7 @@ bot.colors = {
     'confirm': 0x33cc00,
     'error': 0xcc3300
 }
+bot.load_on_ready = True
 
 def confirm_embed(self, text):
     return Embed(
@@ -68,8 +69,10 @@ async def on_command_error(ctx, error):
 @bot.event
 async def on_ready():
     print('We have logged in as {}'.format(bot.user))
-    for val in bot.config['extensions']:
-        await load_extension(val)
+    if bot.load_on_ready:
+        for val in bot.config['extensions']:
+            await load_extension(val)
+        bot.load_on_ready = False
 
 @bot.group(aliases=["ext"], hidden=False)
 @commands.check_any(
