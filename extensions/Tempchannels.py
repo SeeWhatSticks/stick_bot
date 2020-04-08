@@ -66,5 +66,3 @@ def setup(bot):
         print("Failed to load config file")
         print(repr(exc))
     bot.add_cog(Tempchannels(bot, category_id))
-def teardown(bot):
-    pass

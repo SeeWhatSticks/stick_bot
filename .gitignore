@@ -124,6 +124,14 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
-# My files
+# Private files
 token.txt
 extensions/howfar_key.txt
+
+# Config files
+config.json
+extensions/inquisition_channel_id.txt
+extensions/tempchannels_category_id.txt
+
+# Data files
+extensions/howfar_data.json

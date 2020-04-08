@@ -60,6 +60,12 @@ async def unload_extension(name, channel=None):
             await channel.send(response)
 
 @bot.event
+async def on_command_error(ctx, error):
+    await ctx.channel.send(embed=ctx.bot.error_embed(
+            ctx.author.display_name,
+            repr(error)))
+
+@bot.event
 async def on_ready():
     print('We have logged in as {}'.format(bot.user))
     for val in bot.config['extensions']:
@@ -94,6 +100,12 @@ async def load(ctx, name):
 async def unload(ctx, name):
     """Unload an extension"""
     await unload_extension(name, channel=ctx.channel)
+
+@extensions.command()
+async def reload(ctx, name):
+    """Attempt to reload an extension"""
+    await unload_extension(name, channel=ctx.channel)
+    await load_extension(name, channel=ctx.channel)
 
 @bot.command(hidden=True)
 @commands.is_owner()

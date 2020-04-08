@@ -2,7 +2,6 @@ import json, requests
 from math import radians, cos, sin, asin, sqrt
 from discord import Embed, Member
 from discord.ext import commands
-from discord.ext.commands import ExtensionFailed
 
 key_file = "extensions/howfar_key.txt"
 data_file = "extensions/howfar_data.json"
@@ -15,10 +14,10 @@ class Howfar(commands.Cog):
         self.key = key
         try:
             with open(data_file, 'r') as file:
-                data = json.loads(file.read)
+                data = json.loads(file.read())
         except Exception as exc:
             print("Failed to load data file")
-            print(repr(Exception))
+            print(repr(exc))
             data = {
             }
         self.data = data
@@ -116,8 +115,5 @@ def setup(bot):
     except Exception as exc:
         print("Failed to load key file")
         print(repr(exc))
-        raise exc
     else:
         bot.add_cog(Howfar(bot, key))
-def teardown(bot):
-    pass

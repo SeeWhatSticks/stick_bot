@@ -1,6 +1,8 @@
 {
   "extensions": [
     "Inquisition",
-    "Tempchannels"
+    "Tempchannels",
+    "Howfar",
+    "Roll"
   ]
 }
