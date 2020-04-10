@@ -2,6 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3d1d75ca-ba87-43e0-ab0d-fc558242d6e6" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/extensions/Roll.py" beforeDir="false" afterPath="$PROJECT_DIR$/extensions/Roll.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/extensions/Tempchannels.py" beforeDir="false" afterPath="$PROJECT_DIR$/extensions/Tempchannels.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -28,7 +31,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/extensions" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="RecentsManager">
@@ -40,7 +43,7 @@
       <recent name="C:\Users\Steven\Documents\python\stick_bot\extensions" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.main">
+  <component name="RunManager" selected="Python.dice">
     <configuration name="Howfar" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="stick_bot" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -54,27 +57,6 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/extensions/Howfar.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Inquisition" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="stick_bot" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="C:\Users\Steven\Documents\python\stick_bot\extensions\Inquisition.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -125,6 +107,27 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="dice" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="stick_bot" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$APPLICATION_CONFIG_DIR$/scratches" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$APPLICATION_CONFIG_DIR$/scratches/dice.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="stick_bot" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -148,11 +151,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.dice" />
         <item itemvalue="Python.main" />
         <item itemvalue="Python.Howfar" />
         <item itemvalue="Python.Tempchannels (1)" />
         <item itemvalue="Python.blank" />
-        <item itemvalue="Python.Inquisition" />
       </list>
     </recent_temporary>
   </component>
@@ -170,26 +173,26 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="465" y="191" key="FileChooserDialogImpl" timestamp="1586258303398">
+    <state x="465" y="191" key="FileChooserDialogImpl" timestamp="1586518587565">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
-    <state x="465" y="191" key="FileChooserDialogImpl/0.0.1368.872@0.0.1368.872" timestamp="1586258303398" />
-    <state width="1348" height="202" key="GridCell.Tab.0.bottom" timestamp="1586259957632">
+    <state x="465" y="191" key="FileChooserDialogImpl/0.0.1368.872@0.0.1368.872" timestamp="1586518587565" />
+    <state width="1348" height="246" key="GridCell.Tab.0.bottom" timestamp="1586518597615">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
-    <state width="1348" height="202" key="GridCell.Tab.0.bottom/0.0.1368.872@0.0.1368.872" timestamp="1586259957632" />
-    <state width="1348" height="202" key="GridCell.Tab.0.center" timestamp="1586259957632">
+    <state width="1348" height="246" key="GridCell.Tab.0.bottom/0.0.1368.872@0.0.1368.872" timestamp="1586518597615" />
+    <state width="1348" height="246" key="GridCell.Tab.0.center" timestamp="1586518597614">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
-    <state width="1348" height="202" key="GridCell.Tab.0.center/0.0.1368.872@0.0.1368.872" timestamp="1586259957632" />
-    <state width="1348" height="202" key="GridCell.Tab.0.left" timestamp="1586259957632">
+    <state width="1348" height="246" key="GridCell.Tab.0.center/0.0.1368.872@0.0.1368.872" timestamp="1586518597614" />
+    <state width="1348" height="246" key="GridCell.Tab.0.left" timestamp="1586518597614">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
-    <state width="1348" height="202" key="GridCell.Tab.0.left/0.0.1368.872@0.0.1368.872" timestamp="1586259957632" />
-    <state width="1348" height="202" key="GridCell.Tab.0.right" timestamp="1586259957632">
+    <state width="1348" height="246" key="GridCell.Tab.0.left/0.0.1368.872@0.0.1368.872" timestamp="1586518597614" />
+    <state width="1348" height="246" key="GridCell.Tab.0.right" timestamp="1586518597615">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
-    <state width="1348" height="202" key="GridCell.Tab.0.right/0.0.1368.872@0.0.1368.872" timestamp="1586259957632" />
+    <state width="1348" height="246" key="GridCell.Tab.0.right/0.0.1368.872@0.0.1368.872" timestamp="1586518597615" />
     <state x="186" y="79" key="SettingsEditor" timestamp="1586249000917">
       <screen x="0" y="0" width="1368" height="872" />
     </state>

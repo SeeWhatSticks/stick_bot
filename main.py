@@ -63,7 +63,6 @@ async def unload_extension(name, channel=None):
 @bot.event
 async def on_command_error(ctx, error):
     await ctx.channel.send(embed=ctx.bot.error_embed(
-            ctx.author.display_name,
             repr(error)))
 
 @bot.event

@@ -20,9 +20,27 @@ class Tempchannels(commands.Cog):
         if self.category is not None:
             for channel in self.category.channels:
                 last_message = await channel.fetch_message(channel.last_message_id)
-                age = datetime.utcnow()-last_message.created_at
+                time = datetime.utcnow()
+                age = time-last_message.created_at
                 if age >= self.lifespan:
-                    await channel.delete()
+                    e = Embed(
+                            title="Channel Expired",
+                            description="I think this channel should be deleted. Here's why:",
+                            color=self.bot.colors['error'])
+                    e.add_field(
+                            name="Time now:",
+                            value=str(time),
+                            inline=True)
+                    e.add_field(
+                            name="Time of last message:",
+                            value=str(last_message.created_at),
+                            inline=True)
+                    e.add_field(
+                            name="Age",
+                            value=str(age),
+                            inline=False)
+                    await channel.send(embed=e)
+                    # await channel.delete()
 
     @commands.group(aliases=["tempchan", "tc"])
     @commands.guild_only()

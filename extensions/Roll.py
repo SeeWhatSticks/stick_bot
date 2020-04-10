@@ -1,4 +1,5 @@
 from random import randint, choice
+import typing
 from discord import Embed
 from discord.ext import commands
 
@@ -18,16 +19,15 @@ class Roll(commands.Cog):
                 color=COLOR))
 
     @commands.command()
-    async def roll(self, ctx, input_str):
+    async def roll(self, ctx):  #, input_str: typing.Optional[str]):
         """Roll some dice."""
         await ctx.channel.send(embed=Embed(
-            title="Rolled dice for {}:".format(ctx.author.display_name),
-            description="It came up {}!".format(choice(["heads", "tails"])),
+            title="Rolled a six-sider for {}:".format(ctx.author.display_name),
+            description="It was a {}!".format(randint(6)),
             color=COLOR))
-    #     sum = 0
-    #     while any([v in input_str for v in ["+", "-"]]):
-    #         index =
-    #         bit, add, input_str = input_str.partition(input_str[index])
+        # bits = []
+        # while any([v in input_str for v in ["+", "-"]]):
+        #     bit, add, input_str = input_str.partition(input_str[index])
 
     @commands.command()
     async def choose(self, ctx, *, input_str):
