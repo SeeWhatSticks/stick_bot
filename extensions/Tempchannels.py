@@ -19,7 +19,10 @@ class Tempchannels(commands.Cog):
     async def cleanup_channels(self):
         if self.category is not None:
             for channel in self.category.channels:
-                last_message = await channel.fetch_message(channel.last_message_id)
+                message_query = await channel.history(limit=1).flatten()
+                if len(message_query) == 0:
+                    break
+                last_message = message_query[0]
                 time = datetime.utcnow()
                 age = time-last_message.created_at
                 if age >= self.lifespan:
@@ -36,9 +39,19 @@ class Tempchannels(commands.Cog):
                             value=str(last_message.created_at),
                             inline=True)
                     e.add_field(
-                            name="Age",
+                            name="Age:",
                             value=str(age),
                             inline=False)
+                    e.add_field(
+                            name="Message ID:",
+                            value=last_message.id,
+                            inline=True
+                    )
+                    e.add_field(
+                            name="Message content:",
+                            value=last_message.content,
+                            inline=True
+                    )
                     await channel.send(embed=e)
                     # await channel.delete()
 

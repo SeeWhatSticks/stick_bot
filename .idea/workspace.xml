@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3d1d75ca-ba87-43e0-ab0d-fc558242d6e6" name="Default Changelist" comment="">
+    <list default="true" id="3d1d75ca-ba87-43e0-ab0d-fc558242d6e6" name="Default Changelist" comment="Included XOR's Horoscope extension. Some changes">
+      <change afterPath="$PROJECT_DIR$/extensions/Horoscope.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/Steven.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/Steven.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/extensions/Roll.py" beforeDir="false" afterPath="$PROJECT_DIR$/extensions/Roll.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/extensions/Tempchannels.py" beforeDir="false" afterPath="$PROJECT_DIR$/extensions/Tempchannels.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
@@ -36,14 +39,14 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Steven\Documents\python\stick_bot\extensions" />
       <recent name="C:\Users\Steven\Documents\python\stick_bot" />
+      <recent name="C:\Users\Steven\Documents\python\stick_bot\extensions" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Steven\Documents\python\stick_bot\extensions" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.dice">
+  <component name="RunManager" selected="Python.main">
     <configuration name="Howfar" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="stick_bot" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -151,8 +154,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.dice" />
         <item itemvalue="Python.main" />
+        <item itemvalue="Python.dice" />
         <item itemvalue="Python.Howfar" />
         <item itemvalue="Python.Tempchannels (1)" />
         <item itemvalue="Python.blank" />
@@ -173,29 +176,37 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="465" y="191" key="FileChooserDialogImpl" timestamp="1586518587565">
+    <state x="338" y="31" key="CommitChangelistDialog2" timestamp="1586694745433">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
-    <state x="465" y="191" key="FileChooserDialogImpl/0.0.1368.872@0.0.1368.872" timestamp="1586518587565" />
-    <state width="1348" height="246" key="GridCell.Tab.0.bottom" timestamp="1586518597615">
+    <state x="338" y="31" key="CommitChangelistDialog2/0.0.1368.872@0.0.1368.872" timestamp="1586694745433" />
+    <state x="465" y="191" key="FileChooserDialogImpl" timestamp="1586608371510">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
-    <state width="1348" height="246" key="GridCell.Tab.0.bottom/0.0.1368.872@0.0.1368.872" timestamp="1586518597615" />
-    <state width="1348" height="246" key="GridCell.Tab.0.center" timestamp="1586518597614">
+    <state x="465" y="191" key="FileChooserDialogImpl/0.0.1368.872@0.0.1368.872" timestamp="1586608371510" />
+    <state width="1348" height="246" key="GridCell.Tab.0.bottom" timestamp="1586694324278">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
-    <state width="1348" height="246" key="GridCell.Tab.0.center/0.0.1368.872@0.0.1368.872" timestamp="1586518597614" />
-    <state width="1348" height="246" key="GridCell.Tab.0.left" timestamp="1586518597614">
+    <state width="1348" height="246" key="GridCell.Tab.0.bottom/0.0.1368.872@0.0.1368.872" timestamp="1586694324278" />
+    <state width="1348" height="246" key="GridCell.Tab.0.center" timestamp="1586694324278">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
-    <state width="1348" height="246" key="GridCell.Tab.0.left/0.0.1368.872@0.0.1368.872" timestamp="1586518597614" />
-    <state width="1348" height="246" key="GridCell.Tab.0.right" timestamp="1586518597615">
+    <state width="1348" height="246" key="GridCell.Tab.0.center/0.0.1368.872@0.0.1368.872" timestamp="1586694324278" />
+    <state width="1348" height="246" key="GridCell.Tab.0.left" timestamp="1586694324278">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
-    <state width="1348" height="246" key="GridCell.Tab.0.right/0.0.1368.872@0.0.1368.872" timestamp="1586518597615" />
+    <state width="1348" height="246" key="GridCell.Tab.0.left/0.0.1368.872@0.0.1368.872" timestamp="1586694324278" />
+    <state width="1348" height="246" key="GridCell.Tab.0.right" timestamp="1586694324278">
+      <screen x="0" y="0" width="1368" height="872" />
+    </state>
+    <state width="1348" height="246" key="GridCell.Tab.0.right/0.0.1368.872@0.0.1368.872" timestamp="1586694324278" />
     <state x="186" y="79" key="SettingsEditor" timestamp="1586249000917">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
     <state x="186" y="79" key="SettingsEditor/0.0.1368.872@0.0.1368.872" timestamp="1586249000917" />
+    <state x="347" y="184" width="672" height="678" key="search.everywhere.popup" timestamp="1586678968784">
+      <screen x="0" y="0" width="1368" height="872" />
+    </state>
+    <state x="347" y="184" width="672" height="678" key="search.everywhere.popup/0.0.1368.872@0.0.1368.872" timestamp="1586678968784" />
   </component>
 </project>

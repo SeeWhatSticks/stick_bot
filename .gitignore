@@ -135,3 +135,7 @@ extensions/tempchannels_category_id.txt
 
 # Data files
 extensions/howfar_data.json
+extensions/warden_data.json
+
+# WIP
+extensions/Warden.py
