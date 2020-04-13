@@ -4,7 +4,7 @@ from discord import Embed, Member
 from discord.ext import commands
 
 key_file = "extensions/howfar_key.txt"
-data_file = "extensions/howfar_data.json"
+data_file = "howfar_data.json"
 url_prefix = "https://maps.googleapis.com/maps/api/place/findplacefromtext/json"
 
 class Howfar(commands.Cog):
