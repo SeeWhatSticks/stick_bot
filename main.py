@@ -64,6 +64,7 @@ async def unload_extension(name, channel=None):
 async def on_command_error(ctx, error):
     await ctx.channel.send(embed=ctx.bot.error_embed(
             str(error)))
+    raise
 
 @bot.event
 async def on_ready():

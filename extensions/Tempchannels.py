@@ -11,7 +11,8 @@ class Tempchannels(commands.Cog):
         self.category = bot.get_channel(category_id)
         self.category_name = "\U000023F2 Temporary Channels"
 
-        self.lifespan = timedelta(hours=48)
+        self.reminder = timedelta(days=2)
+        self.timeout = timedelta(hours=8)
 
         self.cleanup_channels.start()
 
@@ -25,35 +26,15 @@ class Tempchannels(commands.Cog):
                 last_message = message_query[0]
                 time = datetime.utcnow()
                 age = time-last_message.created_at
-                if age >= self.lifespan:
-                    e = Embed(
-                            title="Channel Expired",
-                            description="I think this channel should be deleted. Here's why:",
-                            color=self.bot.colors['error'])
-                    e.add_field(
-                            name="Time now:",
-                            value=str(time),
-                            inline=True)
-                    e.add_field(
-                            name="Time of last message:",
-                            value=str(last_message.created_at),
-                            inline=True)
-                    e.add_field(
-                            name="Age:",
-                            value=str(age),
-                            inline=False)
-                    e.add_field(
-                            name="Message ID:",
-                            value=last_message.id,
-                            inline=True
-                    )
-                    e.add_field(
-                            name="Message content:",
-                            value=last_message.content,
-                            inline=True
-                    )
-                    await channel.send(embed=e)
-                    # await channel.delete()
+                if last_message.author == self.bot.id:
+                    if age >= self.timeout:
+                        await channel.delete()
+                else:
+                    if age >= self.reminder:
+                        await channel.send(embed=Embed(
+                                title="Channel scheduled for deletion:",
+                                description="If this channel remains inactive, I will delete it.",
+                                color=self.bot.colors['default']))
 
     @commands.group(aliases=["tempchan", "tc"])
     @commands.guild_only()
