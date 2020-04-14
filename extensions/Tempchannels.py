@@ -36,15 +36,9 @@ class Tempchannels(commands.Cog):
                                 description="If this channel remains inactive, I will delete it.",
                                 color=self.bot.colors['default']))
 
-    @commands.group(aliases=["tempchan", "tc"])
+    @commands.command(aliases=["tempchan", "tc"])
     @commands.guild_only()
-    async def tempchannels(self, ctx):
-        """Principal TempChannels Command."""
-        if ctx.invoked_subcommand is None:
-            pass
-
-    @tempchannels.command()
-    async def new(self, ctx, name):
+    async def tempchannel(self, ctx, name):
         """Create a new Temporary Channels category."""
         if self.category is None:
             await ctx.channel.send(embed=ctx.bot.error_embed("The Temporary Channels Category is not set up yet."))
@@ -57,12 +51,12 @@ class Tempchannels(commands.Cog):
                 description="A new Temporary Channel moderated by {}.".format(member.display_name),
                 color=ctx.bot.colors['default']))
 
-    @tempchannels.command()
+    @commands.command()
     @commands.check_any(
             commands.is_owner(),
             commands.has_role('Operator'))
     # TODO: Check for any role in config.json
-    async def setup(self, ctx):
+    async def tempchannelssetup(self, ctx):
         """Setup the Temporary Channels category."""
         self.category = await ctx.guild.create_category(self.category_name)
         with open(config_file, 'w') as file:
