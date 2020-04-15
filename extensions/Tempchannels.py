@@ -19,14 +19,14 @@ class Tempchannels(commands.Cog):
     @tasks.loop(minutes=1.0)
     async def cleanup_channels(self):
         if self.category is not None:
+            time = datetime.utcnow()
             for channel in self.category.channels:
                 message_query = await channel.history(limit=1).flatten()
                 if len(message_query) == 0:
                     break
                 last_message = message_query[0]
-                time = datetime.utcnow()
                 age = time-last_message.created_at
-                if last_message.author == self.bot.id:
+                if last_message.author.id == self.bot.user.id:
                     if age >= self.timeout:
                         await channel.delete()
                 else:

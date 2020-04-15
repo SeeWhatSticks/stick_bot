@@ -31,7 +31,9 @@ class Horoscope(commands.Cog):
                 sign = SIGNS[sign]
             horoscope = Aztro(sign=sign)
             await ctx.channel.send(embed=discord.Embed(
-                    title=f"Your horoscope for {horoscope.day} for a {sign.capitalize()}",
+                    title="Your horoscope for {} for a {}".format(
+                            horoscope.day,
+                            sign.capitalize()),
                     description=horoscope.description
             ))
 
